@@ -1,0 +1,5 @@
+# Make a symbolic link to the ZendFramework 1 folder here.
+
+# Example:
+# ln -s /var/lib/ZendFramework/Zend .
+

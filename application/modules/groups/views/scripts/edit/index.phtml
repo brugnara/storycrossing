@@ -1,0 +1,17 @@
+<?php if( count($this->navigation) ): ?>
+  <div class='menu'>
+    <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+  </div>
+<?php endif; ?>
+
+<div class="groups">
+
+    <h3>Impostazioni: <?php echo $this->group->group_name ?></h3>
+
+<?php echo $this->render("edit/sidebar.phtml") ?>
+    <div class="content">
+        ciao
+
+    </div>
+    <div style="clear:both"></div>
+</div>

@@ -1,0 +1,7 @@
+<?php if( count($this->navigation) ): ?>
+  <div class='menu'>
+    <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+  </div>
+<?php endif; ?>
+<?php echo $this->form ?>
+<div id="searchResult"></div>

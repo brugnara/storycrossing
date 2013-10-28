@@ -1,0 +1,25 @@
+<form action="<?php echo $this->dati["urlpaypal"] ?>" method="post" class="payPalForm">
+    <div>
+        <center>
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="item_name" value="Donation" />
+        <input type="hidden" name="business" value="<?php echo $this->dati["emailpaypal"] ?>" />
+        <input type="hidden" name="notify_url" value="<?php echo $this->dati["urlipn"] ?>" />
+        <input type="hidden" name="return" value="<?php echo $this->dati["urlreturn"] ?>" />
+        <input type="hidden" name="rm" value="2" />
+        <!-- 	General configuration variables for the paypal landing page. Consult
+        http://www.paypal.com/IntegrationCenter/ic_std-variable-ref-donate.html for more info  -->
+        <input type="hidden" name="no_note" value="1" />
+        <input type="hidden" name="cbt" value="<?php echo $this->dati["msgback"] ?>" />
+        <input type="hidden" name="no_shipping" value="1" />
+        <input type="hidden" name="lc" value="<?php echo $this->dati["locale"] ?>" />
+        <input type="hidden" name="currency_code" value="<?php echo $this->dati["currency"] ?>" />
+        <input type="hidden" id="ppd_item_name" name="item_name" value="<?php echo $this->userInfo->user_id ?>"/>
+        <input type="text" maxlength="7" size="3" id="amountText" name="amount" value="10"/> €
+        <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest" />
+        <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        <br/>
+            <input style="margin-top:10px" type="image" src="<?php echo $this->dati['immagine'] ?>" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+        </center>
+    </div>
+</form>

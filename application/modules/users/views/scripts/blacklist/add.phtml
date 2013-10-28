@@ -1,0 +1,9 @@
+<?php if ($this->isOk || $this->error) { ?>
+<h3><?php echo $this->translate('Done!') ?></h3>
+<script type="text/javascript">
+Engine_Api_Popup.close();
+</script>
+<?php } else { ?>
+<h3><?php echo sprintf($this->translate('BLACKLIST_ADD'),$this->lockInfo->user_name) ?></h3>
+<?php echo $this->form ?>
+<?php } ?>

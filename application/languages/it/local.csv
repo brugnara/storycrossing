@@ -1,0 +1,257 @@
+"medium vote";"voto medio"
+"Medium vote";"Voto medio"
+"by votes..";"per voto.."
+"by pages..";"per pagine.."
+"wrote";"ha scritto"
+"pages";"pagine"
+"page";"pagina"
+"Used %1\$s times";"Usato %1\$s volte"
+"subLogoInfo";"%s libri online con %s pagine, letti da %s utenti."
+"Loading...";"Caricamento..."
+"has wrote a new page.";"ha scritto una nuova pagina."
+"has registered. Welcome!";"si è registrato. Benvenuto/a!"
+"has wrote a new story.";"ha scritto una nuova storia."
+"has voted a";"ha votato una"
+"has voted";"ha votato"
+"has voted a page you wrote";"ha votato una pagina che hai scritto"
+"and";"e"
+"is";"è"
+"are";"sono"
+"of";"di"
+"First";"Inizio"
+"Last";"Fine"
+"Next";"Successivo"
+"Previous";"Precedente"
+"Votes";"Voti"
+"Voted";"Votata"
+"Not voted";"Non votata"
+"Page count";"Numero pagine"
+"New pages";"Nuove pagine"
+"Order by";"Ordina per"
+"Language";"Lingua"
+"Wrote by";"Scritto da"
+"you";"te"
+"Following!";"Preferito!"
+"Unfollow!";"Rimuovi dai preferiti"
+"Follow!";"Aggiungi ai preferiti"
+"Show/Hide sidebar";"Vedi/Nascondi menù"
+"This page has been read %s times.";"Questa pagina è stata letta <b>%s</b> volte."
+"Vote this page!";"Vota questa pagina!"
+"Edit!";"Modifica!"
+"Bookmark this page!";"Aggiungi ai segnalibri!"
+"Remove this writer from your blacklist!";"Rimuovi questo scrittore dalla tua blacklist!"
+"Add this writer to your blacklist!";"Aggiungi questo scrittore alla tua blacklist!"
+"Block user";"Blocca utente"
+"Unblock user";"Sblocca utente"
+"Choose how this story should continue...";"E ora scegli come proseguire la storia..."
+"clicked by %s% of readers";"scelta dal %s&#37; dei lettori"
+"Add a page";"..oppure aggiungi una pagina"
+"You must login to add a page!";"Devi effettuare il login per aggiungere una pagina!"
+"Back!";"Torna alla pagina precedente!"
+"Thanks for voting!";"Grazie per aver votato!"
+"wrote by";"scritta da"
+"wroteM by";"scritto da"
+"A user become your friend if he's following you and you too.";"Un utente diventa tuo amico se entrambi vi siete aggiunti agli scrittori preferiti"
+"You don't have friends!.. Foreveralone...";"Non hai amici!... Foreveralone..."
+"Nobody";"Nessuno"
+"Share with...";"Condividi con..."
+"Confirm?";"Confermi?"
+"No bookmarks!";"Nessun segnalibro!"
+"Item deleted!";"Segnalibro eliminato!"
+"Change password!";"Cambia password!"
+"Do you want receive notifications via mail?";"Vuoi ricevere le notifiche via mail?"
+"Leave a message!";"Lascia un messaggio!"
+"followed_by_x_users";"Seguito da %s lettori"
+"Back to my profile";"Torna al tuo profilo"
+"Report page";"Segnala pagina"
+"percentage votes positive";"% di voti positivi"
+
+"TOP WRITERS OF THE WEEK";"I MIGLIORI DEGLI ULTIMI 7 GIORNI"
+"TOP WRITERS OF ALL TIME";"I MIGLIORI DI SEMPRE"
+"RECENT ACTIVITY";"ATTIVITA' RECENTI"
+
+"USER_WALL_PAGE_VOTED";"<a href='%s'>%s</a> ha votato una tua <a href='%s'>pagina</a>"
+"USER_WALL_PAGE_HE_VOTED";"<a href='%s'>%s</a> ha votato una sua <a href='%s'>pagina</a>"
+"USER_WALL_PAGE_MSG";"<a href='%s'>%s</a> ha scritto:"
+"USER_YOU_WROTE_X_PAGES";"Hai scritto %s pagine"
+"USER_WROTE_X_PAGES";"Ha scritto %s pagine"
+"USER_YOU_WROTE_X_STORIES";"Hai iniziato %s storie"
+"USER_WROTE_X_STORIES";"Ha iniziato %s storie"
+"USER_YOU_ARE_FOLLOWEDBY_X_USERS";"Sei seguito da %s lettori"
+"USER_FOLLOWEDBY_X_USERS";"E' seguito da %s lettori"
+"USER_YOU_ARE_FOLLOWING_X_USERS";"Stai seguendo %s scrittori"
+"USER_FOLLOWING_X_USERS";"Sta seguendo %s scrittori"
+"USER_YOU_VOTED_X_PAGES";"Hai votato %s pagine"
+"USER_VOTED_X_PAGES";"Ha votato %s pagine"
+"USER_YOU_READ_X_PAGES";"Hai letto %s pagine"
+"USER_READ_X_PAGES";"Ha letto %s pagine"
+"PAGE_VOTES_REPORT";"A %s lettori su %s piace questo racconto"
+
+"STREAM_NEW_PAGE";" ha scritto una nuova <a href='%s'>pagina</a>"
+"STREAM_NEW_STORY";" ha scritto una nuova <a href='%s'>storia</a>"
+"STREAM_NEW_VOTE";" ha votato una <a href='%s'>pagina</a>"
+
+"CHARS_COUNTER_TITLE_KO";"Una storia, per una miglior lettura, dovrebbe avere un minimo di %s ed un massimo di %s caratteri, puoi comunque scrivere quanto preferisci."
+"CHARS_COUNTER_TITLE_OK";"Lunghezza della storia ottimale!"
+
+"NOTIFY_SEND_TO_FOLLOWERS_OF_TEXT";"<b>%s</b> ha scritto una nuova pagina!<br/><br/><i>%s</i><br/><br/><a href='http://storycrossing.com/books/stories/view/idpage/%s'>Clicca qui</a> per leggerla subito!<br/><br/>Buona giornata dalla redazione di StoryCrossing."
+"NOTIFY_SEND_TO_AUTHOR_OF_STORY";"Ciao StoryCrosser!,<br/>Il tuo racconto <b>%s</b> e' stato proseguito da <b>%s</b>.<br/><br/><i>%s</i><br/><br/><a href='http://storycrossing.com/books/stories/view/idpage/%s'>Clicca qui</a> per leggere subito il seguito.<br/><br/>Buona giornata dalla redazione di Storycrossing."
+"New page from a writer you follow!";"Nuova pagina da un tuo scrittore preferito!"
+"New page on a story you wrote!";"Nuova pagina aggiunta ad una tua storia!"
+
+#menu
+
+"Books";"Racconti"
+"User profile";"Profilo utente"
+"Updates";"Aggiornamenti"
+"Search";"Cerca"
+"Logout";"Logout"
+"Login";"Login"
+"Donate";"Donazioni"
+"Groups";"Gruppi"
+
+#submenu userprofile
+
+"View";"Dettagli"
+"Bookmarks";"Segnalibri"
+"Followers";"Lettori"
+"Following";"Scrittori preferiti"
+"Friends";"Amici"
+"Blacklist";"Blacklist"
+"Wall";"Bacheca"
+
+#user -> news -> index
+
+"Select all";"Seleziona tutti"
+"Deselect all";"Deseleziona tutti"
+"set as read";"segna come letti"
+"delete forever";"cancella per sempre"
+"No updates!";"Nessun aggiornamento!"
+"Your news!";"I tuoi aggiornamenti!"
+
+#user -> blacklist
+
+"BLACKLIST_ADD";"Stai per aggiungere alla tua blacklist \"%s\""
+"Done!";"Fatto!"
+
+"USER_PROFILE_NAME";"Profilo di %s"
+
+#search -> form ricerca
+
+"..story";"..storia"
+"..page";"..pagina"
+"..user";"..utente"
+"You are searching a..";"Stai cercando.."
+"Type what you are searching...";"Digita cosa vuoi cercare..."
+"Search in title / username";"Cerca nel titolo"
+"Search in text / email";"Cerca nel testo"
+
+#story -> showall
+
+"Author";"Autore"
+"This story has %s pages";"Questa storia ha <b>%s</b> pagine"
+"Voted %s times";"Votata <b>%s</b> volte"
+"Views";"Letture uniche"
+"Last page date";"Data ultima pagina"
+"Not yet read";"Non ancora lette"
+"You have read all pages!";"Hai letto tutte le pagine!"
+"From who you follow";"Dai tuoi scrittori preferiti"
+"No stories with seleceted filters!!";"Nessuna storia trovata con i filtri selezionati!!"
+"Add a story";"Aggiungi una storia"
+"You must login to add a story!";"Effettua il login per aggiungere una storia!"
+
+#AdvancedDateFormat
+
+"Seconds ago";"Qualche secondo fa"
+"Less than a minute ago";"Meno di un minuto fa"
+"A few minutes ago";"Qualche minuto fa"
+"Ten minutes ago";"Dieci minuti fa"
+"Twenty minutes ago";"Venti minuti fa"
+"A half hour ago";"Mezz'ora fa"
+"A hour ago";"Un'ora fa"
+"Today";"Oggi"
+"Yesterday";"Ieri"
+"One week ago";"Una settimana fa"
+"Two weeks ago";"Due settimane fa"
+"Three weeks ago";"Tre settimane fa"
+"A month ago";"Un mese fa"
+
+#giorni
+
+"Monday";"Lunedì"
+"Tuesday";"Martedì"
+"Wednesday";"Mercoledì"
+"Thursday";"Giovedì"
+"Friday";"Venerdì"
+"Saturday";"Sabato"
+"Sunday";"Domenica"
+
+#books
+"Page title";"Titolo pagina"
+"Page Body";"Corpo pagina"
+"PAGE_TAGS";"Tag pagina (separali con uno spazio o una virgola, esempio: horror, avventura mostri)"
+"Font of first char.";"Font primo carattere pagina"
+"Page background";"Sfondo pagina"
+"Add!";"Aggiungi!"
+"Story title";"Titolo storia"
+"Story language";"Lingua storia"
+"Story book cover";"Copertina libro"
+"Save!";"Salva!"
+"Vote!";"Vota!"
+"Short comment";"Breve commento"
+
+#gruppi
+"Create a group";"Crea un gruppo"
+"open";"Aperto"
+"readonly";"Sola lettura"
+"GROUPS_INFO";"Questo gruppo ha %s storie.<br/>%s lettori."
+"manage";"Gestisci"
+"Leave this group";"Abbandona il gruppo"
+"JoinGroup";"Iscriviti"
+"Login to Join";"Effettua login per iscriverti"
+"No groups";"Nessun gruppo"
+"Your group";"Tuo gruppo"
+"";""
+
+"DISCLAIMER";"Disclaimer
+
+PRIVACY
+Informativa Privacy (art.13 D.Lgs. 196/2003): i dati che i partecipanti a storycrossing.com conferiscono all’atto della loro iscrizione sono limitati all’ indirizzo e-mail e sono obbligatori al fine di ricevere esclusivamente  la notifica di pubblicazione di un post e/o per l’invio delle news del sito. Le opinioni ed i commenti postati dagli utenti e le informazioni e i dati in esso contenuti non saranno destinati ad altro scopo che alla loro pubblicazione su storycrossing.com, in particolare, non ne è prevista l’aggregazione o selezione in specifiche banche dati. Eventuali trattamenti a fini statistici che in futuro possa essere intenzione del sito eseguire saranno condotti esclusivamente su base anonima. In ogni caso, l’utente ha in ogni momento la possibilità di esercitare i diritti di cui all’ art. 7 del D.Lgs. 196/2003. Per far valere tali diritti, l'Utente può rivolgersi direttamente al Titolare del Trattamento dei Dati personali all'indirizzo info@storycrossing.com
+
+PRIVACY GOOGLE ADSENSE
+Per pubblicare gli annunci sul nostro sito web utilizziamo aziende pubblicitarie indipendenti. Le aziende possono utilizzare questi dati (che non includono il tuo nome, indirizzo, indirizzo email o numero di telefono) sulle tue visite a questo e altri siti web per creare annunci pubblicitari su prodotti e servizi che potrebbero interessarti. Se desideri ulteriori informazioni a questo proposito e per conoscere le opzioni disponibili per impedire l'utilizzo di tali dati da parte di queste aziende, visita il sito: http://www.google.com/privacy_ads.html
+
+PRIVACY GOOGLE ANALYTICS
+Questo sito web utilizza Google Analytics, un servizio di analisi web fornito da Google, Inc. (‘Google’). Google Analytics utilizza dei ‘cookies’, che sono file di testo che vengono depositati sul Vostro computer per consentire al sito web di analizzare come gli utenti utilizzano il sito. Le informazioni generate dal cookie sull'utilizzo del sito web da parte Vostra (compreso il Vostro indirizzo IP) verranno trasmesse a, e depositate presso i server di Google negli Stati Uniti. Google utilizzerà queste informazioni allo scopo di tracciare e esaminare il Vostro utilizzo del sito web, compilare report sulle attività del sito web per gli operatori del sito web e fornire altri servizi relativi alle attività del sito web e all'utilizzo di Internet. Google può anche trasferire queste informazioni a terzi ove ciò sia imposto dalla legge o laddove tali terzi trattino le suddette informazioni per conto di Google. Google non assocerà il vostro indirizzo IP a nessun altro dato posseduto da Google. Potete rifiutarvi di usare i cookies selezionando l'impostazione appropriata sul vostro browser, ma ciò potrebbe impedirvi di utilizzare tutte le funzionalità di questo sito web. Utilizzando il presente sito web, voi acconsentite al trattamento dei Vostri dati da parte di Google per le modalità e i fini sopraindicati.
+
+ISCRIZIONE AL SITO
+L’iscrizione al sito implica l’accettazione totale ed automatica del presente documento.
+
+CONTENUTI DEL SITO WEB
+storycrossing.com non rappresenta una testata giornalistica in quanto viene aggiornato senza alcuna periodicità . Non può pertanto considerarsi un prodotto editoriale ai sensi della legge n° 62 del 7.03.2001.
+L'autore non è responsabile per quanto pubblicato dai lettori nei commenti ad ogni post.Verranno cancellati i commenti ritenuti offensivi o lesivi dell’immagine o dell’onorabilità di terzi, di genere spam, razzisti o che contengano dati personali non conformi al rispetto delle norme sulla Privacy.
+Alcuni testi o immagini inserite in questo blog sono tratte da internet e, pertanto, considerate di pubblico dominio; qualora la loro pubblicazione violasse eventuali diritti d'autore, vogliate comunicarlo via email. Saranno immediatamente rimossi.L'autore del sito Web non è responsabile dei siti collegati tramite link né del loro contenuto che può essere soggetto a variazioni nel tempo.
+
+CONDIZIONI GENERALI DI UTILIZZO DEL SITO WEB
+Il sito storycrossing.com ha per obiettivo la condivisione di testi e/o racconti fra i vari utenti. Il sito può proporre links di accesso a siti di altri enti o di società: storycrossing.com non può ritenersi responsabile circa la loro disponibilità, il loro contenuto, i prodotti ed i servizi offerti, nè, tanto meno, di eventuali danni o perdite occorsi in conseguenza del loro utilizzo. Non è, peraltro, responsabile delle modalità e delle finalità di raccolta e di trattamento dei dati personali da parte di tali soggetti terzi.
+storycrossing.com non si assume nessuna responsabilità per danni di qualsiasi tipo derivanti dall'accesso e/o dall'impossibilità di accedere a questo sito, o dall'utilizzo del medesimo. storycrossing.com si riserva, a propria discrezione, ed in qualisiasi momento, il diritto di:
+• modificare queste condizioni di utilizzo;
+• controllare ed eliminare il materiale inviato al sito;
+• interrompere la disponibilità del sito in qualsiasi momento e senza preavviso.
+L'utente e storycrossing.com concordano che le leggi ed i regolamenti dello Stato italiano e della Comunità Europea, troveranno applicazione per tutte le questioni relative all'utilizzo del presente sito Web. L'utente e storycrossing.com concordano inoltre di assoggettarsi esclusivamente alla competenza del Foro di Bologna per le questioni di cui sopra. Utilizzando questo sito, l'utente implicitamente accetta i termini e le condizioni qui riportate.
+
+NOTA LEGALE
+storycrossing.com mette a disposizione questo sito e i suoi contenuti così come sono e non fornisce alcuna dichiarazione né di garanzia nè di alcun genere in merito.
+storycrossing.com disconosce qualsiasi dichiarazione e garanzia del genere, per esempio, le garanzie di commerciabilità e idoneità per un particolare scopo, inoltre, benché le informazioni fornite siano ritenute accurate, storycrossing.com non dichiara o garantisce che le informazioni rese accessibili attraverso questo sito non contengano errori, né che il sito sia completo o aggiornato.
+Laddove non indicato specificatamente su questo sito, né storycrossing.com né alcuno dei suoi amministratori, dipendenti o altri rappresentanti saranno ritenuti responsabili per danni derivanti o collegati all'utilizzo di questo sito. tale limitazione di responsabilità si applica a tutti i danni di qualsiasi genere, compresi (illimitatamente) danni risarcitori, diretti o indiretti, perdita di dati, ricavi o profitti, perdita o danneggiamento della proprietà e ricorsi di terze parti.
+storycrossing.com raccoglie informazioni che le consentono di contattare un utente Internet tramite l'e-mail.
+Gli utenti del sito storycrossing.com possono generare dati attraverso interazioni esplicite, per esempio le query o altre transazioni quali post, chat, messaggi e /commenti.
+È possibile la raccolta di informazioni riguardanti i gusti e le preferenze personali degli utenti, per esempio il colore preferito, il genere musicale, lo sport, i gusti letterari a discrezione dell’utente e solo a scopo esemplificativo e non esaustivo.
+storycrossing.com utilizza queste informazioni a scopo di semplificare l’interazione tra utenti, di integrazione e supporto dell'attività corrente nel sito Web e di personalizzazione del sito Web  .
+Le suddette informazioni possono essere distribuite all'interno dell'azienda e ai suoi partner. Inoltre, queste informazioni possono essere utilizzate in modo tale da consentire l'identificazione personale di un utente ai fini legali e giuridici.
+
+COPYRIGHT
+I contenuti presenti sul sito ‘storycrossing.com’ dei quali è autore il proprietario del sito non possono essere copiati, riprodotti, pubblicati o redistribuiti perché appartenenti all'autore stesso.
+E’ vietata la copia e la riproduzione dei contenuti in qualsiasi modo o forma.
+E’ vietata la pubblicazione e la redistribuzione dei contenuti non autorizzata espressamente dall’autore. Il presente documento può subire cambiamenti che verranno comunicati agli utenti.
+Copyright © 2012 storycrossing.com by Brugnara Daniele, Luca Zanin, Alessandro Roat, Nicola Angeli. All rights reserved"

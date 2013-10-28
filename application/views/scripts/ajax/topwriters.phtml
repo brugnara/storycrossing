@@ -1,0 +1,37 @@
+<h4 style="margin:0"><?php echo $this->translate('by pages..') ?></h4>
+<ul style="margin:auto;list-style-type: decimal">
+<?php foreach($this->bestWriters as $writer) :
+    $userInfo = Engine_Api_Users::getAUserInfo($writer->page_user_id);
+//echo $writer->tot_votes;
+    ?>
+    <li>
+        <a href="<?php echo $this->url(array(
+            "module" => "users",
+            "controller" => "wall",
+            "id" => $userInfo->user_id,
+        ),null,true) ?>">
+<?php   echo $userInfo->user_name ?>
+        </a>
+        <?php echo $this->translate('wrote') ?> <?php echo $writer->tot ?> <?php echo $this->translate('pages') ?>
+    </li>
+<?php endforeach; ?>
+</ul>
+<?php if (count($this->bestVoted)) : ?>
+<hr/>
+<h4 style="margin:0"><?php echo $this->translate('by votes..') ?></h4>
+<ul style="margin:auto;list-style-type: decimal">
+<?php foreach ($this->bestVoted as $vote) :
+    $userInfo = Engine_Api_Users::getAUserInfo($vote["user_id"]);
+    ?>
+    <li>
+        <a href="<?php echo $this->url(array(
+            "module" => "users",
+            "controller" => "wall",
+            "id" => $userInfo->user_id,
+        ),null,true) ?>">
+<?php   echo $userInfo->user_name ?>
+        </a> <?php echo number_format($vote["vote"] * 100,0) ?><?php echo $this->translate('percentage votes positive') ?>
+    </li>
+<?php endforeach; ?>
+</ul>
+<?php endif; ?>

@@ -1,0 +1,33 @@
+<?php if( count($this->navigation) ) : ?>
+    <div class='menu'>
+        <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+    </div>
+    <div style="clear:both;"></div>
+<?php endif; ?>
+<?php if($this->error) : ?>
+    <h3 class="errorMessage"><?php echo $this->error ?></h3>
+<?php endif; ?>
+<ul style="list-style-type: none;">
+    <li>
+        <a href="<?php echo $this->url(array(
+            "module" => "users",
+            "controller" => "auth",
+            "action" => "loginfacebook",
+        ),null,true) ?>"><img src="<?php echo $this->baseUrl() ?>/contents/images/icons/fb.png" title="Login with Facebook!"/> Login with Facebook!
+        </a>
+    </li>
+    <li>
+        <?php echo $this->form; ?>
+    </li>
+    <li>
+        <a href='<?php echo $this->url(array(
+            "module" => "users",
+            "controller" => "auth",
+            "action" => "register"
+        ),null,true); ?>'>Register</a> | <a href='<?php echo $this->url(array(
+        "module" => "users",
+        "controller" => "auth",
+        "action" => "resetpassword",
+    ),null,true) ?>'>Forgot password?</a>
+    </li>
+</ul>

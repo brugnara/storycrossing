@@ -1,0 +1,134 @@
+<script type="text/javascript">
+function setPageBackGround(selectObj,next) {
+    if (typeof next == 'undefined') {
+        next = 0;
+    }
+    // get the index of the selected option
+    var idx = selectObj.selectedIndex;
+    if (next != 0) {
+        idx = getNewId(idx,selectObj,next);
+        selectObj.value = selectObj.options[idx].value;
+    }
+    // get the value of the selected option
+    var which = selectObj.options[idx].value;
+    document.getElementById("page_main_mini").setAttribute("style", "background-color: "+which);
+}
+function setCoverBackGround(selectObj,next) {
+    if (typeof next == 'undefined') {
+        next = 0;
+    }
+    // get the index of the selected option
+    var idx = selectObj.selectedIndex;
+    if (next != 0) {
+        idx = getNewId(idx,selectObj,next);
+        selectObj.value = selectObj.options[idx].value;
+    }
+    // get the value of the selected option
+    var which = selectObj.options[idx].value;
+    //document.getElementById("cover_mini").setAttribute("style", "background-image: url('<?php echo $this->baseUrl()?>/contents/images/covers/thumbs/"+which+"')");
+    document.getElementById("cover_mini").setAttribute("style", "background-color: "+which);
+}
+function setCapitalBackGround(selectObj,next) {
+    if (typeof next == 'undefined') {
+        next = 0;
+    }
+    var idx = selectObj.selectedIndex;
+    if (next != 0) {
+        idx = getNewId(idx,selectObj,next);
+        selectObj.value = selectObj.options[idx].value;
+    }
+    var which = selectObj.options[idx].value;
+    document.getElementById("font_preview").setAttribute("style", "background-image: url('<?php echo $this->baseUrl()?>/contents/images/fonts/"+which+"/a.png')");
+}
+
+function getCountOfOptions(selectObj) {
+    var items = selectObj.getElementsByTagName("option");
+    return items.length;
+}
+function getNewId(idx,selectObj,next) {
+    var total = getCountOfOptions(selectObj) - 1;
+    if (next == 1) {
+        if (idx < total) {
+            idx++;
+        } else {
+            idx = 0;
+        }
+    } else {
+        if (idx == 0) {
+            idx = total;
+        } else {
+            idx--;
+        }
+    }
+    return idx;
+}
+</script>
+<?php if( count($this->navigation) ): ?>
+    <div class='menu'>
+        <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+    </div>
+    <div style="clear:both;"></div>
+<?php endif; ?>
+    <div class="preview">
+        <h3>Preview</h3>
+        <div id="cover_mini">
+            <table>
+                <tr>
+                    <td><a
+                            href=''
+                            onclick="setCoverBackGround(document.getElementById('select_cover_bg'),-1);return false;"
+                    ><</a></td>
+                    <td class="right"><a
+                            href=''
+                            onclick="setCoverBackGround(document.getElementById('select_cover_bg'),1);return false;">></a></td>
+                </tr>
+            </table>
+        </div>
+        <div id="page_main_mini">
+            <table>
+                <tr>
+                    <td><a
+                            href=''
+                            onclick="setPageBackGround(document.getElementById('select_page_bg'),-1);return false;"
+                    ><</a></td>
+                    <td class="right"><a
+                            href=''
+                            onclick="setPageBackGround(document.getElementById('select_page_bg'),1);return false;">></a></td>
+                </tr>
+            </table></div>
+        <div id="font_preview">
+            <table>
+                <tr>
+                    <td><a
+                            href=''
+                            onclick="setCapitalBackGround(document.getElementById('select_page_capital_font'),-1);return false;"
+                    ><</a></td>
+                    <td class="right"><a
+                            href=''
+                            onclick="setCapitalBackGround(document.getElementById('select_page_capital_font'),1);return false;">></a></td>
+                </tr>
+            </table>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+<?php echo $this->form ?>
+    <script type="text/javascript">
+        setPageBackGround(document.getElementById('select_page_bg'));
+        setCoverBackGround(document.getElementById('select_cover_bg'));
+        setCapitalBackGround(document.getElementById('select_page_capital_font'));
+        //preparo options
+        var items = document.getElementById('select_page_bg').getElementsByTagName("option");
+        var o;
+        for (var i=0;i<items.length;i++) {
+            o = items[i];
+            o.setAttribute("style","background-color:"+o.value);
+            o.innerHTML = "&nbsp;&nbsp;&nbsp;"
+        }
+        var items = document.getElementById('select_cover_bg').getElementsByTagName("option");
+        var o;
+        for (var i=0;i<items.length;i++) {
+            o = items[i];
+            o.setAttribute("style","background-color:"+o.value);
+            o.innerHTML = "&nbsp;&nbsp;&nbsp;"
+        }
+    </script>

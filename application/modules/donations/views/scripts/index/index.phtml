@@ -1,0 +1,10 @@
+<?php if( count($this->navigation) ): ?>
+    <div class='menu'>
+        <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+    </div>
+    <div style="clear:both;"></div>
+<?php endif; ?>
+<a href="" onclick="Engine_Api_SmootBox.open('<?php echo $this->url(array(
+    "module" => "donations",
+    "controller" => "donate",
+),null,true) ?>');return false;">Donate!</a>

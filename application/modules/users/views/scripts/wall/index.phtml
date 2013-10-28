@@ -1,0 +1,70 @@
+<?php if( count($this->navigation) ): ?>
+  <div class='menu'>
+    <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+  </div>
+<?php endif; ?>
+<?php if( count($this->submenu) ): ?>
+  <div class='menu sub' id="subMenu" style="background-color:<?php echo $this->user_preferred_color ?>">
+    <?php echo $this->navigation()->menu()->setContainer($this->submenu)->render() ?>
+  </div>
+<?php endif; ?>
+<div id="userContainer">
+<div class="userProfileMenu">
+<?php
+$isMe = Engine_Api_Users::getUserInfo()->user_id == $this->userDetails->user_id;
+
+if ($isMe) {
+    $txt_vote = 'USER_WALL_PAGE_VOTED';
+} else {
+    $txt_vote = 'USER_WALL_PAGE_HE_VOTED';
+}
+
+?>
+<?php echo $this->render("profile/sidebar.phtml") ?>
+</div>
+    <div class="userProfileContainer userWall">
+        <div><?php echo $this->form; ?></div>
+<?php foreach ($this->wall as $wall) : ?>
+            <div class='row'>
+<?php $userInfo = $wall->getPosterInfo(); ?>
+                <div class="header">
+<?php switch ($wall->user_wall_type) :
+    case 'msg' :
+        $footer = Engine_Api_Date_Utility::advancedDateFormat($wall->user_wall_data);
+        echo sprintf(
+                $this->translate('USER_WALL_PAGE_MSG'),
+                $this->url(array(
+                    "module" => "users",
+                    "controller" => "wall",
+                    "id" => $userInfo->user_id,
+                ),null,true),
+                $userInfo->user_name);
+        $message = $wall->user_wall_message;
+        break;
+    case 'vote' :
+        $footer = Engine_Api_Date_Utility::advancedDateFormat($wall->user_wall_data);
+        echo sprintf(
+                $this->translate($txt_vote),
+                $this->url(array(
+                    "module" => "users",
+                    "controller" => "wall",
+                    "id" => $userInfo->user_id,
+                ),null,true),
+                $userInfo->user_name,
+                $this->url(array(
+                    "module" => "books",
+                    "controller" => "stories",
+                    "action" => "view",
+                    "idpage" => $wall->user_wall_obj_id,
+                ),null,true));
+        $message = "<div class='quotessss'>".$wall->user_wall_message."</div>";
+        break;
+endswitch; ?>
+                </div>
+                <div class="message"><?php echo $message ?></div>
+                <div class="bottom"><?php echo $footer ?></div>
+            </div>
+<?php endforeach; ?>
+    </div>
+</div>
+<div style="margin-bottom: 15px;"></div>

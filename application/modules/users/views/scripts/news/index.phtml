@@ -1,0 +1,91 @@
+<?php if( count($this->navigation) ): ?>
+  <div class='menu'>
+    <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+  </div>
+<?php endif; ?>
+<?php if(count($this->pageUpdates)) { ?>
+<h3><?php echo $this->translate('Your news!') ?></h3>
+<form method="POST" id="user_updates" action="<?php echo $this->url(array(
+    "module" => "users",
+    "controller" => "news",
+    "action" => "bulk",
+),null,true); ?>">
+    <ul class="updates">
+    <?php foreach ($this->pageUpdates as $update) { ?>
+        <?php
+        if ($update->getDetails() == null) {continue;}
+        if ($update->getDetails()->object_type == "new_page") {
+            $url = $this->url(array(
+                "module" => "books",
+                "controller" => "stories",
+                "action" => "view",
+                "id" => $update->getDetails()->object->page_story_id,
+                "idpage" => $update->getDetails()->object->page_id,
+            ),null,true);
+        }
+        $object = $update->getDetails()->object;
+        switch (true) {
+            case ($object instanceof Books_Model_Page) :
+                $userInfo = $object->getUserInfo();
+                break;
+            case ($object instanceof Books_Model_Story) :
+                $userInfo = $object->getWriter();
+                break;
+            default:
+                continue;
+        }
+        $urlUser = $this->url(array(
+            "module" => "users",
+            "controller" => "profile",
+            "action" => "view",
+            "id" => $userInfo->user_id,
+        ),null,true);
+        ?>
+        <li  style="cursor:pointer;" class='<?php echo $update->user_update_read ? "" : "new" ?>'>
+            <input style="float:left;" onclick="openUser = true;" type="checkbox" name="box[]" value="<?php echo $update->getDetails()->object_id ?>"/>
+            <div onclick="if(openUser){openUser = false; return false;};window.location.href='<?php echo $url ?>'">
+<?php if ($update->getDetails()->object_type == "new_page") : ?>
+    <b><?php echo $update->getDetails()->object->page_title ?></b>, <?php echo $this->translate('wrote by') ?> <a href='#' onclick='openUser = true;Engine_Api_SmootBox.open("<?php echo $urlUser ?>");return false;'><?php echo $userInfo->user_name ?></a>
+<?php echo Engine_Api_Date_Utility::advancedDateFormat($update->user_update_data,1) ?>
+<?php endif; //new_page ?>
+<?php if ($update->getDetails()->object_type == "new_story") : ?>
+    <b><?php echo $object->story_title ?></b>, wrote by <a href='#' onclick='openUser = true;Engine_Api_SmootBox.open("<?php echo $urlUser ?>");return false;'><?php echo $userInfo->user_name ?></a>
+<?php echo Engine_Api_Date_Utility::advancedDateFormat($update->user_update_data,1) ?>
+<?php endif; //new_story ?>
+            </div>
+            <div style='clear:both'/>
+        </li>
+    <?php } ?>
+    </ul>
+<script type="text/javascript">
+    var openUser = false;
+    var Updates_Api = {
+    selectAll : function() {
+        var boxs = document.getElementsByName('box[]');
+        for (var i=0;i<boxs.length;i++) {
+            boxs[i].checked = true;
+        }
+    },
+    deselectAll : function() {
+        var boxs = document.getElementsByName('box[]');
+        for (var i=0;i<boxs.length;i++) {
+            boxs[i].checked = false;
+        }
+    }
+};
+</script>
+<div>
+    <a href="#" onclick="Updates_Api.selectAll();return false;"><?php echo $this->translate('Select all') ?></a> /
+    <a href="#" onclick="Updates_Api.deselectAll();return false;"><?php echo $this->translate('Deselect all') ?></a>
+</div>
+    If selected:
+    <select name="bulkAction" onchange="dojo.byId('user_updates').submit();">
+        <option value="-1"></option>
+        <option value="setread"><?php echo $this->translate('set as read') ?></option>
+        <option value="delete"><?php echo $this->translate('delete forever') ?></option>
+    </select>
+</form>
+<?php } else { ?>
+<h3><?php echo $this->translate('No updates!') ?></h3>
+<?php } ?>
+
