@@ -9,6 +9,7 @@ The version 0.3 is the original, HTML4 version. No AJAX at all. I want to build 
 - Write your mysql configuration in /application/configs/application.ini.
 - For using facebook login, you have to create a facebook application and add api keys in application.ini
 - Mail: application/api/Mailer.php contains all data for sending email from site (notifications..). Write your own email data for testing this.
+- Zend Framework 1.x is required. Set in your apache env or add a sym link in /library
 
 Mobile
 ======
