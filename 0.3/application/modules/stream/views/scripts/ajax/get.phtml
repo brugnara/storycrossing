@@ -1,0 +1,73 @@
+<div class="mainStream userWall">
+<?php
+$maxId = 0;
+define("MAX_CHARS", 200);
+foreach ($this->stream as $item) { ?>
+    <div name="divStream" class='row' id="<?php echo md5(rand(1,100)) ?>">
+<?php
+$uriUser = $this->url(array(
+    "module" => "users",
+    "controller" => "wall",
+    "id" => $item->stream_user_id,
+),null,true);
+$message = "";
+if ($item->stream_id > $maxId) {
+    $maxId = $item->stream_id;
+}
+?>
+                <div class="header">
+<?php
+switch ($item->stream_from_mobile) {
+    case 1:
+        //Android
+        ?><img style="width:15px;height:15px;" src='<?php echo $this->baseUrl() ?>/contents/images/icons/android.png' title='Sent from Android app!'/> <?php
+        break;
+}
+?>
+                    <a href='<?php echo $uriUser ?>' onclick='//Engine_Api_SmootBox.open("<?php echo $uriUser ?>");return false;' >
+                        <?php echo Engine_Api_Users::getAUserInfo($item->stream_user_id)->user_name ?>
+                    </a>
+<?php switch ($item->stream_type) {
+    case "new_page" :
+        $page = Engine_Api_Pages::getPageInfo($item->stream_object_id);
+        echo sprintf($this->translate('STREAM_NEW_PAGE'),$this->url(array(
+            "module" => "books",
+            "controller" => "stories",
+            "action" => "view",
+            "idpage" => $page->page_id,
+        ),null,true));
+        $message = $page->page_text;
+    break;
+    case "new_story" :
+        $story = Engine_Api_Stories::getStoryInfo($item->stream_object_id);
+        echo sprintf($this->translate('STREAM_NEW_PAGE'),$this->url(array(
+            "module" => "books",
+            "controller" => "stories",
+            "action" => "cover",
+            "id" => $story->story_id,
+            "showCover" => 1,
+        ),null,true));
+        $message = Engine_Api_Stories::getFirstPageOfAStory($story->story_id)->page_text;
+    break;
+    case "new_user" :
+       echo $this->translate('has registered. Welcome!');
+       break;
+    case "new_vote" :
+        echo sprintf($this->translate('STREAM_NEW_VOTE'),$this->url(array(
+            "module" => "books",
+            "controller" => "stories",
+            "action" => "view",
+            "idpage" => $item->stream_object_id,
+        ),null,true));
+        break;
+} ?>    </div>
+        <div class="message"><?php echo substr($message,0,MAX_CHARS).( (strlen($message) > MAX_CHARS) ? "[...]" : "" ) ?></div>
+        <div class="bottom" name="tdDate" id="date_<?php echo strtotime($item->stream_date) ?>">
+            <?php //echo Engine_Api_Date_Utility::advancedDateFormat($item->stream_date) ?>
+        </div>
+    </div>
+<?php
+}
+?>
+<!-- MAXID:<?php echo $maxId ?>: -->
+</div>

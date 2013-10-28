@@ -1,0 +1,146 @@
+<?php if( count($this->navigation) ) : ?>
+    <div class='menu'>
+        <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+    </div>
+    <div style="clear:both;"></div>
+<?php endif; ?>
+<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=IM+Fell+English' rel='stylesheet' type='text/css'>
+<div id="orderBy">
+<?php echo $this->form; ?>
+</div>
+<div style="clear:both;"></div>
+<div class="stories">
+    <?php if (count($this->stories)) : ?>
+        <table>
+            <?php
+            $i = 0;
+            foreach($this->stories as $story) :
+                $url = $this->url(array(
+                    "module" => "books",
+                    "controller" => "stories",
+                    "action" => "cover",
+                    "id" => $story->story_id,
+                    "showCover" => 1
+                ),null,true);
+                $elementiPerPagine = 3;
+                if ($i == 0 || $i % $elementiPerPagine == 0) { ?>
+                    <tr>
+                <?php } ?>
+                        <td><div class="storyDetails autoHide">
+                            <div onclick="window.location.href='<?php echo $url; ?>'" class="cover_mini titoloCover_mini" style="background-color: <?php echo $story->story_bg ?>">
+                                <center>
+                                    <a href='<?php echo $url; ?>'><?php echo (iconv("UTF-8", "UTF-8",$story->story_title)); ?></a>
+                                </center>
+                            </div>
+                            <div style="position:absolute;width:24px;height:24px;background-image: url('<?php echo $this->baseUrl() ?>/contents/images/flags-iso/24/<?php echo $story->story_language ?>.png')"></div>
+                                <div style="display:block">
+                                <?php echo $this->translate('Author') ?>: <a href='<?php echo $this->url(array(
+                                        "module" => "users",
+                                        "controller" => "profile",
+                                        "action" => "view",
+                                        "id" => $story->story_user_id,
+                                    ),null,true); ?>'><?php echo $story->getWriter()->user_name ?></a><br/>
+                                    <?php printf($this->translate('This story has %s pages'),$story->getCounterPages()) ?><br/>
+                                    <?php $unreaded = $story->getUnreadedPages(); ?>
+                                    <?php if ($unreaded) : ?>
+                                    <?php echo $this->translate('and') ?> <b><?php echo $unreaded ?></b> <?php echo $unreaded == 1 ? $this->translate("is") : $this->translate("are") ?>
+                                        <?php echo $this->translate('new from somebody you follow!'); ?>
+                                    <?php endif; ?><br/>
+                                    <?php if($story->my_votomedio) : ?>
+                                        <?php echo ucfirst($this->translate("medium vote")) ?>: <b><?php echo number_format($story->my_votomedio,1) ?></b><br/>
+                                    <?php endif; ?>
+                                    <?php printf($this->translate('Voted %s times'),$story->my_votes) ?><br/>
+                                    <?php echo $this->translate('Views') ?>: <b><?php echo $story->my_views ?></b><br/>
+                                    <?php echo $this->translate('Last page date') ?>:<br/> <b><?php echo @date("d M 'y @H:i",@strtotime($story->my_lastactivity)) ?></b><br/>
+                                    <?php if ($this->isLogged) : ?>
+                                        <?php if ($story->my_pagenew) : ?>
+                                            <?php echo $this->translate('Not yet read') ?>: <b><?php echo $story->my_pagenew ?></b><br/>
+                                        <?php else : ?>
+                                            <?php echo $this->translate('You have read all pages!') ?><br/>
+                                        <?php endif; ?>
+                                        <?php if ($story->my_fromfollowers) : ?>
+                                            <?php echo $this->translate('From who you follow') ?>: <b><?php echo $story->my_fromfollowers ?></b><br/>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                            Tags:
+                                    <?php
+                                    $tags = $story->getTags();
+                                    $tmpTags = $story->getCountTags();
+                                    $tagsUsed = $tmpTags->tot;
+                                    $tagsMax = $tmpTags->most;
+                                    $size100p = 9;//px
+//                                    $size100p = 20;//px
+
+                                    $arCustomColors = array();
+                                    $arCustomColors[0] = "#8080ff";
+                                    $arCustomColors[1] = "#412000";
+                                    $arCustomColors[2] = "#806210";
+                                    $arCustomColors[3] = "#a160ff";
+                                    $arCustomColors[4] = "#080";
+                                    $arCustomColors[5] = "#19b92f";
+                                    $arCustomColors[6] = "#c600ff";
+                                    $arCustomColors[7] = "#ff00d5";
+                                    $arCustomColors[8] = "#57ff00";
+                                    $arCustomColors[9] = "#f00";
+                                    //calcolo size: 100%:SUM = x:COUNT => x% = 100%*COUNT / SUM
+    //                                $tags = shuffle($tags);
+                                    $temp = array();
+                                    foreach ($tags as $k => $tag) :
+                                        $size = (int) ($size100p * $tag->story_tag_counter / $tagsMax);
+//                                        $size = $size100p--;
+                                        //echo $size = (int)($size100p*$tag->story_tag_counter / $tagsUsed);
+                                        ob_start();
+                                        ?>
+                                        <a
+                                            title="Used: <?php echo $tag->story_tag_counter ?> times"
+                                            style="
+                                                color:<?php echo $arCustomColors[$size] ?>;
+                                                font-size: <?php echo 10+1*$size ?>px;"
+                                            href="<?php echo $this->url(array(
+                                                "module" => "books",
+                                                "controller" => "stories",
+                                                "action" => "showall",
+                                                "tags" => $tag->story_tag_tag,
+                                            )) ?>"><?php echo $tag->story_tag_tag ?><!--<sup><?php echo $tag->story_tag_counter ?></sup>--></a><?php echo $k+1 < count($tags) ? ",":"";
+                                        $temp[$tag->story_tag_tag] = ob_get_contents();
+                                        ob_end_clean();
+                                    endforeach;
+//                                    ksort($temp);
+                                    foreach ($temp as $t) {
+                                        echo $t;
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </td>
+                <?php if (++$i % $elementiPerPagine == 0) { ?>
+                    </tr>
+                <?php } ?>
+            <?php endforeach; ?>
+            <?php if (++$i % $elementiPerPagine != 0) { ?>
+                </tr>
+            <?php } ?>
+        </table>
+    <?php else : ?>
+    <h3><?php echo $this->translate('No stories with seleceted filters!!') ?></h3>
+    <?php endif; ?>
+
+    <?php echo $this->paginationControl($this->stories,
+        'Elastic',
+        'paginators/items.phtml'); ?>
+
+    <div class="button">
+    <?php if ($this->isLogged) : ?>
+        <div class="image add"></div>
+        <a href="<?php echo $this->url(array(
+            "module" => "books",
+            "controller" => "stories",
+            "action" => "add"
+        ),null,true) ?>"><?php echo $this->translate('Add a story') ?></a>
+    <?php else : ?>
+    <div class="image error"></div>
+    <strong><?php echo $this->translate('You must login to add a story!') ?></strong>
+    <?php endif; ?>
+    </div>
+</div>

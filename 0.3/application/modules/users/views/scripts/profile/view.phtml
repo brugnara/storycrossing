@@ -1,0 +1,43 @@
+<?php if( count($this->navigation) ): ?>
+  <div class='menu'>
+    <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+  </div>
+<?php endif; ?>
+<?php if(count($this->submenu)) : ?>
+  <div class='menu sub' id="subMenu" style="background-color:<?php echo $this->user_preferred_color ?>">
+    <?php echo $this->navigation()->menu()->setContainer($this->submenu)->render() ?>
+  </div>
+<?php endif; ?>
+<div id="userContainer">
+<div class="userProfileMenu">
+<?php echo $this->render("profile/sidebar.phtml") ?>
+</div>
+<div class="userProfileContainer">
+    <?php if ($this->message) : ?>
+    <h5><?php echo $this->message; ?></h5>
+    <?php endif; ?>
+    <?php if ($this->form) : ?>
+    <?php echo $this->form; ?>
+<script type="text/javascript">
+    function setMenuBackGround(selectObj) {
+        var which = getSelectValue(selectObj);
+        document.getElementById("subMenu").setAttribute("style", "background-color: "+which);
+    }
+    //prendo tutte le options e gli schiaffo un colore
+    //document.getElementById('select_page_bg')
+    var items = document.getElementById('user_preferred_color').getElementsByTagName("option");
+    var o;
+    for (var i=0;i<items.length;i++) {
+        o = items[i];
+        o.setAttribute("style","background-color:"+o.value);
+        o.innerHTML = "&nbsp;&nbsp;"
+    }
+</script>
+    <a href='<?php echo $this->url(array(
+        "controller" => "users",
+        "action" => "changepassword",
+    ),null,true) ?>'><?php echo $this->translate('Change password!') ?></a>
+    <?php endif; ?>
+</div>
+<div class="clear:both"></div>
+</div>

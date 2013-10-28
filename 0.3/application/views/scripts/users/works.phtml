@@ -1,0 +1,20 @@
+<?php if( count($this->navigation) ): ?>
+  <div class='menu'>
+    <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render() ?>
+  </div>
+<?php endif; ?>
+<?php if( count($this->submenu) ): ?>
+  <div class='menu sub'>
+    <?php echo $this->navigation()->menu()->setContainer($this->submenu)->render() ?>
+  </div>
+<?php endif; ?>
+<div class="button" style="width:400px" id="worksBestStories"><h3><?php echo $this->isMe ? "Show your best stories" : "Show best stories of this user" ?></h3></div>
+<div class="button" style="width:auto;height:auto;" id="worksBestPages">
+    <h3>
+        <a
+            href='#'
+            onclick="
+                Engine_Api_Works.getMostVotedPages('worksBestPages',<?php echo $this->user_id ?>,5);return false;"
+        ><?php echo $this->isMe ? "Show your best pages" : "Show best pages of this user" ?></a>
+    </h3>
+</div>

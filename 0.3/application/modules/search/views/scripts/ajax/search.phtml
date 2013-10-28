@@ -1,0 +1,56 @@
+<?php if (count($this->results)) { ?>
+    <h3><?php echo count($this->results); echo count($this->results) == 1 ? " item" : " items" ?> found:</h3>
+    <?php
+    $id = "id";
+    switch ($this->searched) {
+        case "users":
+            $urlParams = array(
+                "module" => "users",
+                "controller" => "profile",
+                "action" => "view",
+            );
+            break;
+        case "pages":
+            $urlParams = array(
+                "module" => "books",
+                "controller" => "pages",
+                "action" => "view",
+            );
+            break;
+        case "stories":
+        case "tag":
+            $urlParams = array(
+                "module" => "books",
+                "controller" => "stories",
+                "action" => "cover",
+                "showCover" => "1",
+            );
+            break;
+    }
+    ?>
+    <ul class="listNumeric">
+    <?php foreach ($this->results as $result) { ?>
+        <li>
+            <?php $urlParams[$id] = $result->id; ?>
+            <a href='<?php echo $this->url($urlParams,null,true); ?>'><?php echo $result->text ?></a>
+            <?php if($result instanceof Books_Model_Story) : ?>
+            <span style="font-weight: 8px;font-family: monospace">
+            [Tags: <?php
+            $story = $result;
+            $tags = $story->getTags();
+            foreach ($tags as $k => $tag) :?>
+                     <a href="<?php echo $this->url(array(
+                        "module" => "books",
+                        "controller" => "stories",
+                        "action" => "showall",
+                        "tags" => $tag->story_tag_tag,
+                    )) ?>"><?php echo $tag->story_tag_tag ?></a><?php echo $k+1 < count($tags) ? ",":"";
+            endforeach; ?>]</span>
+            <?php endif; ?>
+        </li>
+    <?php } ?>
+    </ul>
+<?php } else { ?>
+        <h3>No results!</h3>
+<?php } ?>
+

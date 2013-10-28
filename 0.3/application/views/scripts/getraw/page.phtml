@@ -1,0 +1,33 @@
+<div id="title"><?php echo $this->page->page_title; ?></div>
+<div id="text"><?php echo $this->page->page_text; ?></div>
+<?php $n = 1; ?>
+<div id="queries">
+<?php if (count($this->page_queries)) : ?>
+    <?php foreach ($this->page_queries as $query) : ?>
+        <div class='<?php echo $query->isWriterInMyBlacklist() ? "query blacklisted" : "query" ?>'>
+        <?php echo $n++; ?>).
+        <a class="link_query" href="<?php echo $this->url(array(
+            "controller" => "getraw",
+            "action" => "page",
+            "id" => $query->page_id,
+        ),null,true); ?>">
+                <?php echo $query->page_title ?>
+        </a> [by
+            <a class="link_user" href='<?php echo $this->url(array(
+                "controller" => "users",
+                "action" => "view",
+                "id" => $query->getUserInfo()->user_id,
+            ),null,true); ?>'><?php echo $query->getUserInfo()->user_name ?></a>]
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>
+</div>
+<div id="prev">
+<?php if ($this->page->page_prev_page_id) { ?>
+    <a href="<?php echo $this->url(array(
+        "controller" => "getraw",
+        "action" => "page",
+        "id" => $this->page->page_prev_page_id,
+    ),null,true) ?>">Back!</a>
+<?php } ?>
+</div>

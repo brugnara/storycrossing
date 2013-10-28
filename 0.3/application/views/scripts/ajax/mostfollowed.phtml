@@ -1,0 +1,13 @@
+<ul style="margin:auto;list-style-type: decimal">
+<?php foreach ($this->users as $user) : ?>
+    <li>
+        <a title="<?php echo sprintf($this->translate('followed_by_x_users'),$user->tot) ?>" href="<?php echo $this->url(array(
+            "module" => "users",
+            "controller" => "wall",
+            "id" => $user->user_id
+        ),null,true) ?>">
+            <?php echo $user->user_name ?><br/>
+        </a>
+    </li>
+<?php endforeach; ?>
+</ul>
