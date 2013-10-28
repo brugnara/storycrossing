@@ -1,6 +1,10 @@
 StoryCrossing
 =============
 
+*Info about old-version branch*
+This branch is the old site, currently online. I'll drop any pushing request on this branch, only security patch will be merged.
+Our goal should be improve master letting dead this one.
+
 *Goal*
 The main goal of this open source project, is to obtain a very nice collaborative writing web site.
 The version 0.3 is the original, HTML4 version. No AJAX at all. I want to build a frontend with AngularJS + Bootstrap that uses REST SC already has.
